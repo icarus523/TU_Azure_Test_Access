@@ -1,4 +1,4 @@
-# Test deploy script to see if account has been configured correctly
+# Test deploy script to see if your account has been configured correctly by DJAG IT
 
 # This script will deploy a Ubuntu 16-04 LTS Server in Azure and automatically remove it. 
 $subscriptionId = "bb1dd1e3-b731-4239-a1a0-fa1a52457b46"
@@ -6,8 +6,8 @@ $resourceGroupName = "test_resource_group_$env:UserName"
 $resourceGroupLocation = "Australia East"
 $deploymentName = $resourceGroupName
 
-$vmTemplateFilePath = Join-Path $PSScriptRoot "test_templates\template.json"
-$vmParametersFilePath = Join-Path $PSScriptRoot "test_templates\parameters.json"
+$vmTemplateFilePath = "template.json"
+$vmParametersFilePath = "parameters.json"
 
 # Test Account for Azure Access
 _common\azure_verify_login.ps1
