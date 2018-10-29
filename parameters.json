@@ -1,0 +1,74 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "australiaeast"
+        },
+        "networkInterfaceName": {
+            "value": "testvm-Ubuntu-16-04-LTS-nic"
+        },
+        "networkSecurityGroupName": {
+            "value": "testvm-Ubuntu-16-04-LTS-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "10.62.75.0/24",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "10.42.137.128/25",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/bb1dd1e3-b731-4239-a1a0-fa1a52457b46/resourceGroups/qdj-nprd-aes-rg-net/providers/Microsoft.Network/virtualNetworks/qdj-nprd-aes-vnet-inf"
+        },
+        "subnetName": {
+            "value": "qdj-nprd-aes-snet-inf-dmz"
+        },
+        "publicIpAddressName": {
+            "value": "testvm-Ubuntu-16-04-LTS-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "testvm-Ubuntu-16-04-LTS"
+        },
+        "virtualMachineRG": {
+            "value": "testvm-Ubuntu-16-04-LTS"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "azureadmin"
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "testvmlinuxdiag"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "Microsoft.Storage/storageAccounts/testvmlinuxdiag"
+        },
+        "diagnosticsStorageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "diagnosticsStorageAccountKind": {
+            "value": "Storage"
+        }
+    }
+}
